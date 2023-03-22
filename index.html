@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en"><head><style>.jquery-ripples { position: relative; z-index: 0; }</style>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BlissPoint Inn® - Find Hotel Rooms &amp; Reservations</title>
+    <!-- Favicon -->
+    <link rel="icon" href="http://blisspointinns.com/demo/images/favicon.png">
+    <!-- Google Fonts -->
+    <link href="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/css2.css" rel="stylesheet">
+    <!-- Template CSS Files -->
+    <link rel="stylesheet" href="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/bootstrap.min.css">
+    <link rel="stylesheet" href="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/bootstrap-select.min.css">
+    <link rel="stylesheet" href="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/line-awesome.css">
+    <link rel="stylesheet" href="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/owl.carousel.min.css">
+    <link rel="stylesheet" href="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/owl.theme.default.min.css">
+    <link rel="stylesheet" href="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/daterangepicker.css">
+    <link rel="stylesheet" href="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/animated-headline.css">
+    <link rel="stylesheet" href="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/jquery-ui.css">
+    <link rel="stylesheet" href="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/flag-icon.min.css">
+    <link rel="stylesheet" href="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/style.css">
+  <style>/* EqualWeb color */
+#INDmenu-btn {
+	--indmaincolor:      #171d2d;
+	--indsecondcolor:    White;
+}
+
+</style><style>#INDmenu-btn,#INDquickAccess button{position:fixed;height:auto;width:auto;cursor:pointer}#INDmenu-btn svg *,#INDmenu-btn-moveArrow :first-child{stroke:none!important}#INDpopup,.INDhasDragTooltip #INDWrap #INDmenu-btn:focus #INDmenu-btn-moveArrow,.INDhasDragTooltip #INDWrap #INDmenu-btn:hover #INDmenu-btn-moveArrow,.INDhasDragTooltip #INDWrap #INDmenu-btn:not(.INDbtn-loading):focus:after,.INDhasDragTooltip #INDWrap #INDmenu-btn:not(.INDbtn-loading):focus:before,.INDhasDragTooltip #INDWrap #INDmenu-btn:not(.INDbtn-loading):hover:after,.INDhasDragTooltip #INDWrap #INDmenu-btn:not(.INDbtn-loading):hover:before,[data-indhasdragtooltip] #INDWrap #INDmenu-btn:focus #INDmenu-btn-moveArrow,[data-indhasdragtooltip] #INDWrap #INDmenu-btn:hover #INDmenu-btn-moveArrow,[data-indhasdragtooltip] #INDWrap #INDmenu-btn:not(.INDbtn-loading):focus:after,[data-indhasdragtooltip] #INDWrap #INDmenu-btn:not(.INDbtn-loading):focus:before,[data-indhasdragtooltip] #INDWrap #INDmenu-btn:not(.INDbtn-loading):hover:after,[data-indhasdragtooltip] #INDWrap #INDmenu-btn:not(.INDbtn-loading):hover:before{opacity:1}.INDMobile.INDbtn-draging,[data-indmobile].INDbtn-draging,body.INDmodalOpen,body[data-indmodalopen]{overflow:hidden}#INDWrap{position:absolute;width:100%;height:0;top:0;z-index:2147483647}@media print{#INDWrap{display:none!important}}#INDWrap template,#INDmenu-btn.INDbtn-loading svg:not(#INDdummy),.INDhasDragTooltip #INDWrap #INDmenu-btn.INDbtn-loading:focus #INDmenu-btn-moveArrow,.INDhasDragTooltip #INDWrap #INDmenu-btn.INDbtn-loading:hover #INDmenu-btn-moveArrow,[data-indhasdragtooltip] #INDWrap #INDmenu-btn.INDbtn-loading:focus #INDmenu-btn-moveArrow,[data-indhasdragtooltip] #INDWrap #INDmenu-btn.INDbtn-loading:hover #INDmenu-btn-moveArrow{display:none!important}#INDerror h2,.INDloader{display:block}#INDblindNotif{position:fixed!important}.INDloader:after{content:" ";display:block;width:25px;height:25px;margin:1px;border-radius:50%;border:5px solid var(--indmaincolor);border-color:#fff transparent;animation:1.2s linear infinite INDloader}#INDmenu .INDloader:after{margin:30px auto;border-color:var(--indmaincolor) transparent var(--indsecondcolor) transparent}@keyframes INDloader{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}#INDquickAccess,#INDquickAccess li,#INDquickAccess ul{height:0;list-style:none}#INDquickAccess ul{margin:0;padding:0;list-style:none}#INDquickAccess li{margin:0;padding:0}#INDquickAccess li:after,#INDquickAccess li:before{content:''!important;display:none!important}#INDquickAccess button{top:-300px;margin:0;padding:8px 16px;font-size:24px;font-weight:700;text-align:center;line-height:normal!important;color:#fff;background:#000;border-radius:4px;border:1px solid #fff;transition:top .6s;z-index:10}.INDMobile #INDquickAccess button,[data-indmobile] #INDquickAccess button{font-size:18px}.INDlangdirRTL #INDquickAccess button,[data-indlangdirrtl] #INDquickAccess button{font-family:Spacer,Arial,sans-serif}.INDlangdirLTR #INDquickAccess button,[data-indlangdirltr] #INDquickAccess button{font-family:Verdana,Geneva,sans-serif}.INDpositionLeft #INDquickAccess button,[data-indpositionleft] #INDquickAccess button{left:180px}.INDpositionRight #INDquickAccess button,[data-indpositionright] #INDquickAccess button{right:180px}#INDquickAccess button:focus{top:0}:not(#INDdummy).INDtooltip,:not(#INDdummy).INDtooltip *{line-height:24px;font-family:Alef,Open Sans Hebrew,Arial,sans-serif;font-size:16px}:not(#INDdummy).INDtooltip{position:absolute;top:2px;margin:0;padding:7px 21px;width:auto;min-width:192px;box-sizing:content-box;text-align:center;letter-spacing:.7px;border:none;border-radius:8px;-webkit-filter:drop-shadow(0 0 2px white);-moz-filter:drop-shadow(0 0 2px white);-ms-filter:drop-shadow(0 0 2px white);filter:drop-shadow( 0 0 2px white );opacity:.87}:not(#INDdummy):not(INDdummy).INDtooltip{color:#fff!important;background:#000!important}:not(#INDdummy):not(INDdummy).INDtooltip *{color:#fff!important}.INDpositionLeft :not(#INDdummy).INDtooltip,[data-indpositionleft] :not(#INDdummy).INDtooltip{float:left}.INDpositionRight :not(#INDdummy).INDtooltip,[data-indpositionright] :not(#INDdummy).INDtooltip{float:right}.INDlangdirLTR #INDpopup,.INDlangdirLTR :not(#INDdummy).INDtooltip,[data-indlangdirltr] #INDpopup,[data-indlangdirltr] :not(#INDdummy).INDtooltip{direction:ltr}.INDlangdirRTL #INDpopup,.INDlangdirRTL :not(#INDdummy).INDtooltip,[data-indlangdirrtl] #INDpopup,[data-indlangdirrtl] :not(#INDdummy).INDtooltip{direction:rtl}:not(#INDdummy).INDtooltip:after{content:"";position:absolute}:not(#INDdummy).INDtooltip.INDtipLeft:after,:not(#INDdummy).INDtooltip.INDtipRight:after{top:17px;margin-top:-8px;border-top:8px solid transparent;border-bottom:8px solid transparent}:not(#INDdummy).INDtooltip.INDtipBottom:after,:not(#INDdummy).INDtooltip.INDtipTop:after{border-left:8px solid transparent;border-right:8px solid transparent}.INDlangdirRTL :not(#INDdummy).INDtooltip.INDtipBottom:after,.INDlangdirRTL :not(#INDdummy).INDtooltip.INDtipTop:after,[data-indlangdirrtl] :not(#INDdummy).INDtooltip.INDtipBottom:after,[data-indlangdirrtl] :not(#INDdummy).INDtooltip.INDtipTop:after{right:17px;margin-right:-8px}.INDlangdirLTR :not(#INDdummy).INDtooltip.INDtipBottom:after,.INDlangdirLTR :not(#INDdummy).INDtooltip.INDtipTop:after,[data-indlangdirltr] :not(#INDdummy).INDtooltip.INDtipBottom:after,[data-indlangdirltr] :not(#INDdummy).INDtooltip.INDtipTop:after{left:17px;margin-left:-8px}:not(#INDdummy).INDtooltip.INDtipLeft:after{left:100%;border-left:8px solid #000}:not(#INDdummy).INDtooltip.INDtipRight:after{right:100%;border-right:8px solid #000}:not(#INDdummy).INDtooltip.INDtipTop:after{top:100%;border-top:8px solid #000}:not(#INDdummy).INDtooltip.INDtipBottom:after{bottom:100%;border-bottom:8px solid #000}:not(#INDdummy) :not(#INDdummy).INDhiddenText{display:inline-block;color:#000;background:#fff;position:absolute;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px)}#INDmenu{position:fixed;top:0;margin:0;padding:0;width:180px;height:180px;z-index:100000;visibility:visible;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;border:none;border-top:27px solid #0a7da4;border-bottom:13px solid #0a7da4;background:#fff;transition:left .4s ease-in,right .4s ease-in,top .4s ease-in,visibility .4s ease-in!important}.INDpositionLeft #INDmenu,[data-indpositionleft] #INDmenu{left:0;right:initial!important;border-right:4px solid #0a7da4}.INDpositionRight #INDmenu,[data-indpositionright] #INDmenu{right:0;left:initial!important;border-left:4px solid #0a7da4}#INDmenu[aria-hidden=true]{visibility:hidden}.INDpositionLeft #INDmenu[aria-hidden=true],[data-indpositionleft] #INDmenu[aria-hidden=true]{left:-400px}.INDpositionRight #INDmenu[aria-hidden=true],[data-indpositionright] #INDmenu[aria-hidden=true]{right:-400px}#INDmenu :focus{outline:rgb(77,144,254) auto 1px!important}#INDerror{background:#fff;text-align:center;width:313px}#INDmenu-btn,#INDmenu-btn>span{background:var(--indmaincolor)!important}#INDerror h2{-webkit-text-stroke:initial;-moz-text-stroke:initial;-ms-text-stroke:initial}#INDmenu-btn>svg,.INDhasDragTooltip #INDWrap #INDmenu-btn[data-INDdrag] #INDmenu-btn-moveArrow,[data-indhasdragtooltip] #INDWrap #INDmenu-btn[data-INDdrag] #INDmenu-btn-moveArrow{display:block!important}#INDerror h2,#INDloader img{margin:24px 0;width:auto;line-height:initial;letter-spacing:initial}#INDerror *{font-family:Arial,Helvetica,sans-serif;font-weight:500;font-size:25px;color:#444}:not(#INDdummy).INDkeyboardIcon{white-space:nowrap;font-size:smaller}:not(#INDdummy).INDkeyboardIcon kbd{display:inline-flex;justify-content:center;align-items:center;box-sizing:border-box;height:24px;min-width:24px;border:.2em solid;border-radius:.3em;border-color:#ddd #bbb #777 #999;background-color:#fff!important;background-image:linear-gradient(to bottom left,#eee,#fff,#eee);padding:.1em .3em;font-family:monospace;font-weight:400;vertical-align:bottom}:not(#INDdummy).INDkeyboardIcon kbd,:not(#INDdummy).INDkeyboardIcon kbd *{color:#000!important;font-size:12px}:not(#INDdummy).INDkeyboardIcon kbd *{margin:none;padding:none;border:none}@media screen and (max-width:800px){.INDhasDragTooltip #INDWrap #INDmenu-btn:after,[data-indhasdragtooltip] #INDWrap #INDmenu-btn:after{font-size:15px}#INDWrap #INDpopup>div{width:100%!important;height:50%!important;top:10%!important;right:0!important;left:0!important;border-radius:0!important}}#INDbtnWrap{margin:0;padding:0;border:none;z-index:9999}#INDmenu-btn{padding:15px;min-width:auto;top:24px;border:none;outline:0;box-shadow:none;transform:scale(var(--indscale,1));transition:transform .6s;--indscale:1;--indscale-contra:calc(1 - var(--indscale));--indscale-margin:calc( var(--indscale-contra) * 10 * -4px );z-index:inherit}.INDMobile #INDmenu-btn,[data-indmobile] #INDmenu-btn{top:unset;bottom:24px}.INDpositionRight #INDmenu-btn,[data-indpositionright] #INDmenu-btn{right:5px!important;margin-right:var(--indscale-margin)!important}.INDpositionLeft #INDmenu-btn,[data-indpositionleft] #INDmenu-btn{left:5px!important;margin-left:var(--indscale-margin)!important}#INDmenu-btn>svg{position:static!important;width:50px!important;height:50px!important}#INDmenu-btn>svg,#INDmenu-btn>svg *{border:none;outline:0}.INDpositionRight #INDmenu-btn svg,[data-indpositionright] #INDmenu-btn svg{transform:scaleX(-1)}#INDmenu-btn svg *{fill:var(--indsecondcolor)!important}#INDmenu-btn>span{text-align:center;font-size:1.7rem;color:var(--indsecondcolor)!important}#INDmenu-btn.INDarrow-btn.INDarrow-before-btn>span{padding-right:0;padding-left:20px}#INDmenu-btn.INDarrow-btn.INDarrow-after-btn>span{padding-right:20px;padding-left:0}#INDmenu-btn.INDarrow-btn.INDarrow-after-btn>span:after,#INDmenu-btn.INDarrow-btn.INDarrow-before-btn>span:before{content:''}#INDmenu-btn.INDarrow-btn>span:after,#INDmenu-btn.INDarrow-btn>span:before{background:0 0!important;position:absolute;top:26px;height:11px;width:11px;border:2px solid var(--indsecondcolor)!important;border-bottom-left-radius:2px;border-top:none!important;border-right:none!important}#INDmenu-btn.INDarrow-btn>span:before{left:15px!important}#INDmenu-btn.INDarrow-btn>span:after{right:15px!important}#INDmenu-btn.INDarrow-right-btn>span:after,#INDmenu-btn.INDarrow-right-btn>span:before{transform:rotate(225deg)}#INDmenu-btn.INDarrow-left-btn>span:after,#INDmenu-btn.INDarrow-left-btn>span:before{transform:rotate(45deg)}#INDmenu-btn.INDarrow-up-btn>span:after,#INDmenu-btn.INDarrow-up-btn>span:before{transform:rotate(135deg)}#INDmenu-btn.INDarrow-down-btn>span:after,#INDmenu-btn.INDarrow-down-btn>span:before{transform:rotate(-45deg)}#INDmenu-btn.INDoutline-btn{color:var(--indmaincolor)!important;border:5px solid var(--indsecondcolor)!important}#INDmenu-btn.INDoutline-btn:hover{border:unset!important}#INDmenu-btn.INDrounded-btn{border-radius:15px!important}#INDmenu-btn.INDcircle-btn{border-radius:100px!important}.INDpositionLeft #INDmenu-btn.INDsemicircle-btn,[data-indpositionleft] #INDmenu-btn.INDsemicircle-btn{left:0!important;border-radius:0 100px 100px 0!important;padding-left:12px!important}.INDpositionRight #INDmenu-btn.INDsemicircle-btn,[data-indpositionright] #INDmenu-btn.INDsemicircle-btn{right:0!important;border-radius:100px 0 0 100px!important;padding-right:12px!important}.INDpositionLeft #INDmenu-btn.INDsemicircle-btn.INDoutline-btn,[data-indpositionleft] #INDmenu-btn.INDsemicircle-btn.INDoutline-btn{border-left:0!important}.INDpositionRight #INDmenu-btn.INDsemicircle-btn.INDoutline-btn,[data-indpositionright] #INDmenu-btn.INDsemicircle-btn.INDoutline-btn{border-right:0!important}.INDpositionLeft #INDmenu-btn.INDcanoe-btn,[data-indpositionleft] #INDmenu-btn.INDcanoe-btn{border-radius:0 100px!important}.INDpositionLeft #INDmenu-btn.INDcanoe-btn>svg,[data-indpositionleft] #INDmenu-btn.INDcanoe-btn>svg{transform:rotate(-45deg)!important}.INDpositionRight #INDmenu-btn.INDcanoe-btn,[data-indpositionright] #INDmenu-btn.INDcanoe-btn{border-radius:100px 0!important}.INDpositionRight #INDmenu-btn.INDcanoe-btn>svg,[data-indpositionright] #INDmenu-btn.INDcanoe-btn>svg{transform:rotate(45deg)!important}.INDhasDragTooltip #INDWrap #INDmenu-btn-moveArrow,[data-indhasdragtooltip] #INDWrap #INDmenu-btn-moveArrow{display:none!important;position:absolute!important;top:-50%!important;opacity:0;transition:opacity .3s ease-in-out}.INDFirefox.INDhasDragTooltip #INDWrap #INDmenu-btn[data-INDdrag],body[data-indfirefox][data-indhasdragtooltip] #INDWrap #INDmenu-btn[data-INDdrag]{overflow:unset!important}.INDhasDragTooltip #INDWrap #INDmenu-btn[data-INDdrag],[data-indhasdragtooltip] #INDWrap #INDmenu-btn[data-INDdrag]{cursor:move!important;overflow:hidden}.INDhasDragTooltip #INDWrap #INDmenu-btn:focus,.INDhasDragTooltip #INDWrap #INDmenu-btn:hover,[data-indhasdragtooltip] #INDWrap #INDmenu-btn:focus,[data-indhasdragtooltip] #INDWrap #INDmenu-btn:hover{overflow:unset}.INDhasDragTooltip #INDWrap #INDmenu-btn:before,[data-indhasdragtooltip] #INDWrap #INDmenu-btn:before{content:'';background-color:#122231;background-color:var(--indmaincolor,#122231);border:1px solid #fff;border:1px solid var(--indsecondcolor,#fff);opacity:0;transition:opacity .3s ease-in-out;position:absolute;top:-40%;width:100%;height:120px;z-index:-1}.INDhasDragTooltip #INDWrap #INDmenu-btn[data-INDdrag]:before,[data-indhasdragtooltip] #INDWrap #INDmenu-btn[data-INDdrag]:before{cursor:move}.INDhasDragTooltip #INDWrap #INDmenu-btn:after,[data-indhasdragtooltip] #INDWrap #INDmenu-btn:after{content:attr(data-drag-content);background-color:#122231;background-color:var(--indmaincolor,#122231);border:1px solid #fff;border:1px solid var(--indsecondcolor,#fff);cursor:pointer;color:#fff;color:var(--indsecondcolor,#fff);opacity:0;transition:opacity .3s ease-in-out;position:absolute;top:-40%;left:unset;right:unset;width:auto;height:120px;padding:0 10px;font-size:18px;word-break:normal;word-wrap:normal;white-space:pre-line;line-height:1.2em;font-family:Open Sans Hebrew,Arial,Helvetica,sans-serif;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}.INDhasDragTooltip #INDWrap[lang=ja] #INDmenu-btn:after,.INDhasDragTooltip #INDWrap[lang=ko] #INDmenu-btn:after,.INDhasDragTooltip #INDWrap[lang=lt] #INDmenu-btn:after,.INDhasDragTooltip #INDWrap[lang=zh-CN] #INDmenu-btn:after,.INDhasDragTooltip #INDWrap[lang=zh] #INDmenu-btn:after,[data-indhasdragtooltip] #INDWrap[lang=ja] #INDmenu-btn:after,[data-indhasdragtooltip] #INDWrap[lang=ko] #INDmenu-btn:after,[data-indhasdragtooltip] #INDWrap[lang=zh-CN] #INDmenu-btn:after,[data-indhasdragtooltip] #INDWrap[lang=zh] #INDmenu-btn:after,[data-indhasdragtooltip]#INDWrap[lang=lt] #INDmenu-btn:after{word-break:keep-all;width:fit-content}.INDhasDragTooltip #INDWrap[lang=lt] #INDmenu-btn:after,[data-indhasdragtooltip] #INDWrap[lang=lt] #INDmenu-btn:after{white-space:normal}.INDlangdirRTL.INDhasDragTooltip #INDWrap #INDmenu-btn:after,[data-indlangdirrtl][data-indhasdragtooltip] #INDWrap #INDmenu-btn:after{width:93px;line-height:1.4em}.INDpositionLeft #INDWrap #INDmenu-btn:after,[data-indpositionleft] #INDWrap #INDmenu-btn:after{border-radius:0 5px 5px 0}.INDpositionRight #INDWrap #INDmenu-btn:after,[data-indpositionright] #INDWrap #INDmenu-btn:after{border-radius:5px 0 0 5px}.INDhasDragTooltip.INDpositionRight #INDmenu-btn:before,[data-indhasdragtooltip][data-indpositionright] #INDmenu-btn:before{right:0!important}.INDhasDragTooltip.INDpositionRight #INDmenu-btn:after,[data-indhasdragtooltip][data-indpositionright] #INDmenu-btn:after{right:100%!important}.INDhasDragTooltip.INDpositionLeft #INDmenu-btn:before,[data-indhasdragtooltip][data-indpositionleft] #INDmenu-btn:before{left:0!important}.INDhasDragTooltip.INDpositionLeft #INDmenu-btn:after,[data-indhasdragtooltip][data-indpositionleft] #INDmenu-btn:after{left:100%!important}.INDhasDragTooltip #INDmenu-btn.INDoutline-btn:focus,[data-indhasdragtooltip] #INDmenu-btn.INDoutline-btn:hover{border:none!important}#INDpopup{position:fixed;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,.7);z-index:99999999999;pointer-events:auto;transition:opacity 250ms ease-in}#INDpopup:not(.open){opacity:0;visibility:hidden;pointer-events:none;transition:opacity 250ms ease-in,visibility 0s 250ms}#INDpopup>div{display:flex;flex-direction:column;position:fixed;margin:0;width:660px;height:auto;top:calc((100vh - 540px)/ 2);left:calc(50% - 330px);background:#122231;border:0 solid #888;border-radius:10px;padding:12px 12px 44px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}#INDpopup>div:not(#INDdummy):not(.INDopenCmdLeg).flyingfocus_target_style{padding:12px 12px 44px!important}#INDpopup .INDpopupContent{flex-grow:1;box-sizing:border-box;width:100%;height:100%;-webkit-overflow-scrolling:touch;overflow-y:hidden;background-color:#fff;border-radius:10px;overflow:hidden;font-family:Arial,sans-serif;font-size:16px;text-align:center;padding:10px;direction:ltr;color:#333;line-height:1.3em}#INDpopup .INDpopupConfirm,#INDpopup>div .INDpopupClose{color:#fff;margin:0;padding:0;display:inline-block;background:0 0;cursor:pointer;position:absolute;font-family:Open Sans Hebrew,Arial,Helvetica,sans-serif}#INDpopup .INDpopupContent #INDdictionaryPopupWrapper{width:100%;margin:0 auto;padding:15px 20px;height:100%;background-color:#fff}.INDSafari #INDpopup .INDpopupContent,[data-indsafari] #INDpopup .INDpopupContent{overflow-y:auto!important}#INDpopup>div .INDpopupClose{font-weight:700;top:6px;left:13px;font-size:22px;border:none;width:17px;height:21px;text-align:center;line-height:1em;vertical-align:top}#INDpopup>div #INDpopupHead{color:#fff!important;font-size:22px;margin:0;padding:10px 0 20px;border:0;line-height:1.1em;font-weight:400;text-align:center;height:auto;width:100%;position:static;font-family:Open Sans Hebrew,Arial,Helvetica,sans-serif;-webkit-text-fill-color:unset;-moz-text-fill-color:unset;-ms-text-fill-color:unset;-o-text-fill-color:unset;-webkit-text-stroke:unset;-moz-text-stroke:unset;-ms-text-stroke:unset;-o-text-stroke:unset}#INDpopup iframe{width:100%;height:450px;border:0 solid #ddd;background:0 0!important;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;border-radius:10px;overflow:hidden}#INDpopup .INDpopupConfirm{font-size:18px;width:auto;height:auto;border-radius:0;border:none;box-shadow:none;bottom:7px;left:8px}#INDWrap[lang=en] #INDpopup .INDpopupConfirm{right:8px;left:auto}#INDWrap[lang=en] #INDpopup>div .INDpopupClose{right:13px;left:auto}</style></head>
+  <body style="margin: 0px; padding-top: 96px;" data-ind-ratio="300" data-indlangdirltr="INDlangdirLTR" class="INDlangdirLTR INDpositionLeft INDDesktop INDFirefox INDhasDragTooltip fixed-nav" data-indpositionleft="INDpositionLeft" data-inddesktop="INDDesktop" data-indfirefox="INDFirefox" data-indhasdragtooltip="INDhasDragTooltip"><div id="INDWrap" dir="ltr" data-ind-version="4.4.1" style="display: block;" lang="en"><div id="INDblindNotif" tabindex="-1" class="INDhiddenText" role="alert">Please
+ note: This website includes an accessibility system. Press Control-F11 
+to adjust the website to the visually impaired who are using a screen 
+reader; Press Control-F10 to open an accessibility menu.</div><div id="INDmenu" aria-hidden="true"></div><div style="display: none;" id="INDpopup" aria-hidden="true"><div role="dialog" aria-modal="true" aria-labelledby="INDpopupHead" tabindex="0"><div id="INDpopupHead" role="heading" aria-level="2" tabindex="0">Popup heading</div><div id="INDContent" class="INDpopupContent"></div><button id="INDCloseBtn" class="INDpopupConfirm" tabindex="0">Close</button></div></div><div id="INDdata" style="display: none;"></div><div id="INDbtnWrap"><button id="INDmenu-btn" aria-expanded="false" aria-haspopup="true" accesskey="m" data-drag-content="
+Explore your accessibility options" class="INDcircle-btn" style="top: 80%; --indscale: 0.6; --indmaincolor: #0a51f2;" data-inddrag="true">
+				<svg id="INDmenu-btn-moveArrow" version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="52px" height="52px" viewBox="0 0 52 52" xml:space="preserve">
+					<path fill="#010101" d="M25.904,13.439c-0.189,0.022-0.364,0.109-0.498,0.244l-3.352,3.352c-0.346,0.307-0.378,0.836-0.07,1.183
+						c0.307,0.347,0.836,0.378,1.182,0.071c0.027-0.023,0.053-0.049,0.076-0.076l1.92-1.92v6.361C25.156,23.098,25.557,23.51,26,23.51
+						c0.442,0,0.844-0.412,0.838-0.855v-6.361l1.92,1.92c0.305,0.348,0.834,0.385,1.183,0.08s0.384-0.834,0.079-1.182
+						c-0.023-0.027-0.049-0.053-0.075-0.076l-3.351-3.352C26.414,13.502,26.159,13.41,25.904,13.439z M17.525,21.809
+						c-0.189,0.025-0.365,0.114-0.496,0.253l-3.352,3.351c-0.323,0.326-0.323,0.853,0,1.178l3.352,3.353
+						c0.304,0.348,0.833,0.384,1.182,0.079c0.348-0.304,0.385-0.833,0.08-1.182c-0.023-0.026-0.049-0.053-0.075-0.077l-1.921-1.919h6.354
+						c0.443,0.008,0.848-0.395,0.848-0.838c0-0.441-0.404-0.844-0.848-0.838h-6.354l1.921-1.928c0.331-0.324,0.337-0.854,0.015-1.186
+						C18.047,21.867,17.787,21.775,17.525,21.809z M34.283,21.809c-0.462,0.05-0.794,0.463-0.745,0.922
+						c0.02,0.193,0.108,0.373,0.247,0.51l1.919,1.928h-6.354c-0.029,0-0.058,0-0.086,0c-0.439,0.023-0.818,0.443-0.795,0.882
+						c0.022,0.438,0.443,0.816,0.881,0.794h6.354l-1.919,1.919c-0.348,0.309-0.38,0.838-0.073,1.184c0.308,0.347,0.838,0.379,1.184,0.072
+						c0.027-0.025,0.053-0.05,0.075-0.076l3.353-3.353c0.322-0.325,0.322-0.852,0-1.178l-3.353-3.351
+						C34.793,21.875,34.538,21.782,34.283,21.809z M25.992,28.502c-0.442,0.005-0.839,0.413-0.83,0.855v6.353l-1.92-1.919
+						c-0.178-0.187-0.433-0.279-0.689-0.254c-0.46,0.05-0.793,0.463-0.744,0.923c0.021,0.193,0.107,0.372,0.246,0.509l3.352,3.352
+						c0.327,0.327,0.857,0.328,1.186,0.001c0,0,0.001-0.001,0.002-0.001l3.351-3.352c0.347-0.307,0.379-0.836,0.072-1.183
+						s-0.838-0.379-1.184-0.071c-0.027,0.023-0.053,0.049-0.075,0.076l-1.92,1.919v-6.353C26.848,28.91,26.438,28.498,25.992,28.502z"></path>
+				</svg><svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.96 15.577" xml:space="preserve">
+<path fill="#010101" d="M8.652,10.444c-0.299,0-0.539,0.24-0.539,0.538c-0.002,1.255-0.672,2.415-1.758,3.043
+	c-1.682,0.972-3.833,0.396-4.805-1.284C0.577,11.06,1.152,8.907,2.834,7.937c0.012-0.008,0.023-0.015,0.037-0.021
+	c0.251-0.16,0.324-0.494,0.166-0.745c-0.16-0.251-0.493-0.326-0.744-0.167C0.874,7.825,0,9.341,0,10.979
+	c-0.001,2.537,2.057,4.596,4.595,4.598c2.536-0.002,4.593-2.057,4.597-4.595C9.191,10.685,8.949,10.444,8.652,10.444z
+	 M11.907,11.103l-1.644-2.84C10.006,7.816,9.51,7.563,8.997,7.614L7.25,7.791C7.085,7.812,6.934,7.694,6.916,7.528
+	C6.91,7.484,6.914,7.439,6.928,7.396l0.777-2.078l2.158,0.635c0.363,0.113,0.75-0.091,0.862-0.455
+	c0.112-0.365-0.091-0.751-0.456-0.863l-3.365-0.99c-0.1-0.035-0.213-0.069-0.342-0.103L6.354,3.48
+	c-0.079-0.024-0.161-0.031-0.24-0.026c-0.121-0.018-0.246-0.032-0.381-0.04C4.305,3.337,3.711,3.696,3.545,3.841
+	C3.375,3.987,3.262,4.2,3.248,4.444C3.244,4.505,3.246,4.566,3.256,4.627l0.663,3.808c0.176,1.018,1.143,1.701,2.161,1.528
+	L8.1,9.618c0.49-0.082,0.983,0.119,1.275,0.521l1.26,1.725c0.193,0.265,0.549,0.351,0.842,0.206l0.166-0.082
+	c0.313-0.156,0.439-0.536,0.284-0.849C11.92,11.126,11.914,11.114,11.907,11.103z M5.563,2.616c0.723,0.039,1.34-0.514,1.379-1.236
+	c0.038-0.723-0.516-1.339-1.238-1.378C4.98-0.038,4.364,0.517,4.325,1.239C4.286,1.961,4.84,2.577,5.563,2.616z M12.758,3.468
+	c-0.182-0.092-0.405-0.021-0.497,0.162l-1.47,2.877L8.355,6.376c-0.205-0.012-0.38,0.145-0.391,0.35
+	c-0.012,0.205,0.146,0.379,0.35,0.391l2.676,0.143c0.006,0,0.014,0.002,0.02,0.002c0.139,0,0.267-0.08,0.33-0.203l1.579-3.092
+	C13.012,3.783,12.939,3.561,12.758,3.468z"></path>
+</svg>
+<span class="INDhiddenText">Accessibility</span></button></div><div id="INDquickAccess"><ul><li><button accesskey="b" class="INDshortcutBtn" tabindex="1">Press enter for Accessibility for blind people<span class="INDhiddenText"> who use screen readers</span></button></li><li><button accesskey="l" tabindex="1">Press enter for Keyboard Navigation</button></li><li><button tabindex="1">Press enter for Accessibility menu</button></li></ul></div></div>
+    <!-- start cssload-loader -->
+    <div class="preloader" id="preloader" style="display: none;">
+      <div class="loader">
+        <svg class="spinner" viewBox="0 0 50 50">
+          <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+        </svg>
+      </div>
+    </div>
+    <!-- end cssload-loader -->
+    <!-- ================================
+            START HEADER AREA
+================================= -->
+    <header class="header-area">
+      <div class="header-menu-wrapper padding-right-100px padding-left-100px">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="menu-wrapper justify-content-between">
+                <a href="#" class="down-button">
+                  <i class="la la-angle-down"></i>
+                </a>
+                <div class="logo">
+                  <a href="http://blisspointinns.com/demo/index.html">
+                    <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/logo.png" alt="logo">
+                  </a>
+                  <div class="menu-toggler">
+                    <i class="la la-bars"></i>
+                    <i class="la la-times"></i>
+                  </div>
+                  <!-- end menu-toggler -->
+                </div>
+                <!-- end logo -->
+                <div class="main-menu-content pr-0 ml-0">
+                  <nav>
+                    <ul>
+                      <li>
+                        <a href="http://blisspointinns.com/demo/hotels.html">Hotels </a>
+                      </li>
+                      <li>
+                        <a href="#brand">Our Brands </a>
+                      </li>
+                      <li>
+                        <a href="http://blisspointinns.com/demo/franchise.html">Franchise Development </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <!-- end main-menu-content -->
+                <div class="nav-btn">
+                  <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInputGroup">Hotel, city or state</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text"> <span class="la la-search form-icon"></span></div>
+                      </div>
+                      <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Hotel, city or state">
+                    </div>
+                  </div>
+                </div>
+                <!-- end nav-btn -->
+              </div>
+              <!-- end menu-wrapper -->
+            </div>
+            <!-- end col-lg-12 -->
+          </div>
+          <!-- end row -->
+        </div>
+        <!-- end container-fluid -->
+      </div>
+      <!-- end header-menu-wrapper -->
+    </header>
+    <!-- ================================
+         END HEADER AREA
+================================= -->
+    <!-- ================================
+    START HERO-WRAPPER AREA
+================================= -->
+    <section class="hero-wrapper hero-wrapper2">
+      <div class="hero-box ">
+        <div id="fullscreen-slide-contain" style="position: relative; overflow: hidden; width: 100%; height: 587px;">
+          <div class="slides-control" style="position: relative; height: 100%; width: 3840px; left: -1280px;"><ul class="slides-container" style="margin: 0px; padding: 0px; list-style: none; position: relative; height: 100%;">
+            <li style="display: block; left: 1280px; position: absolute; overflow: hidden; height: 100%; width: 1280px; top: 0px; z-index: 2; opacity: 1;">
+              <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/hero-bg2.jpg" alt="" style="backface-visibility: hidden; position: absolute; left: 0px; top: -47.8335px; z-index: -1; max-width: none; height: 682.667px; width: 1280px;">
+            </li>
+            <li style="display: none; left: 1280px; position: absolute; overflow: hidden; height: 100%; width: 1280px; top: 0px; z-index: 0; opacity: 1;">
+              <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/hero--bg2.jpg" alt="" style="backface-visibility: hidden; position: absolute; left: 0px; top: -47.8335px; z-index: -1; max-width: none; height: 682.667px; width: 1280px;">
+            </li>
+            <li style="display: none; left: 1280px; position: absolute; overflow: hidden; height: 100%; width: 1280px; top: 0px; z-index: 0; opacity: 1;">
+              <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/hero--bg3.jpg" alt="" style="backface-visibility: hidden; position: absolute; left: 0px; top: -47.8335px; z-index: -1; max-width: none; height: 682.667px; width: 1280px;">
+            </li>
+          </ul></div>
+        </div>
+        <!-- End background slider -->
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="hero-content pb-5">
+                <div class="section-heading">
+                  <p class="sec__desc pb-2">Welcome to Bliss Point</p>
+                  <h2 class="sec__title"> You have come to the right place to book your next stay. </h2>
+                </div>
+              </div>
+              <!-- end hero-content -->
+              <div class="search-fields-container">
+                <div class="contact-form-action">
+                  <form action="#" class="row">
+                    <div class="col-lg-3 pr-0">
+                      <div class="input-box">
+                        <label class="label-text">Destination / Hotel name</label>
+                        <div class="form-group">
+                          <span class="la la-map-marker form-icon"></span>
+                          <input class="form-control" list="programmingLanguages" type="text" placeholder="Enter City or property">
+                          <datalist id="programmingLanguages">
+                            <option value="New Buffalo">New Buffalo</option>
+                          </datalist>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end col-lg-3 -->
+                    <div class="col-lg-3 pr-0">
+                      <div class="input-box">
+                        <label class="label-text">Check in - Check out</label>
+                        <div class="form-group">
+                          <span class="la la-calendar form-icon"></span>
+                          <input class="date-range form-control" type="text" name="daterange" value="22/03/2023 - 22/03/2023">
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end col-lg-3 -->
+                    <div class="col-lg-3">
+                      <div class="input-box">
+                        <label class="label-text">Guests and Rooms</label>
+                        <div class="form-group">
+                          <div class="dropdown dropdown-contain gty-container">
+                            <a class="dropdown-toggle dropdown-btn" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                              <span class="adult" data-text="Adult" data-text-multi="Adults">0 Adult</span> - <span class="children" data-text="Child" data-text-multi="Children">0 Child</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-wrap">
+                              <div class="dropdown-item">
+                                <div class="qty-box d-flex align-items-center justify-content-between">
+                                  <label>Rooms</label>
+                                  <div class="qtyBtn d-flex align-items-center">
+                                    <div class="qtyDec">
+                                      <i class="la la-minus"></i>
+                                    </div>
+                                    <input type="text" name="room_number" value="0" class="qty-input">
+                                    <div class="qtyInc">
+                                      <i class="la la-plus"></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="dropdown-item">
+                                <div class="qty-box d-flex align-items-center justify-content-between">
+                                  <label>Adults</label>
+                                  <div class="qtyBtn d-flex align-items-center">
+                                    <div class="qtyDec">
+                                      <i class="la la-minus"></i>
+                                    </div>
+                                    <input type="text" name="adult_number" value="0">
+                                    <div class="qtyInc">
+                                      <i class="la la-plus"></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="dropdown-item">
+                                <div class="qty-box d-flex align-items-center justify-content-between">
+                                  <label>Children</label>
+                                  <div class="qtyBtn d-flex align-items-center">
+                                    <div class="qtyDec">
+                                      <i class="la la-minus"></i>
+                                    </div>
+                                    <input type="text" name="child_number" value="0">
+                                    <div class="qtyInc">
+                                      <i class="la la-plus"></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- .end dropdown-contain -->
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end col-lg-3 -->
+                    <div class="col-lg-3 pr-0">
+                      <div class="btn-box pt-2">
+                        <a href="http://blisspointinns.com/demo/hotels.html" class="theme-btn">Book Now</a>
+                      </div>
+                    </div>
+                    <!-- end col-lg-3 -->
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- end col-lg-12 -->
+          </div>
+          <!-- end row -->
+        </div>
+        <!-- end container -->
+      </div>
+    </section>
+    <!-- end hero-wrapper -->
+    <!-- ================================
+    END HERO-WRAPPER AREA
+================================= -->
+
+    <!-- ================================
+    START HOTEL AREA
+================================= -->
+<section class="hotel-area section-bg padding-top-50px padding-bottom-50px overflow-hidden">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-heading text-center">
+          <h2 class="sec__title line-height-55"> Popular Hotel Destinations You Might Like </h2>
+        </div>
+        <!-- end section-heading -->
+      </div>
+      <!-- end col-lg-12 -->
+    </div>
+    <!-- end row -->
+    <div class="row padding-top-50px">
+      <div class="col-lg-12">
+        <div class="hotel-card-wrap">
+          <div class="hotel-card-carousel-2 carousel-action owl-loaded owl-carousel">
+            
+              
+              
+            <!-- end card-item -->
+          <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1200px, 0px, 0px); transition: all 0s ease 0s; width: 3600px;"><div class="owl-item cloned" style="width: 370px; margin-right: 30px;"><div class="card-item">
+              <div class="card-img">
+                <a href="http://blisspointinns.com/demo/31993.html" class="d-block">
+                  <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/sure.jpg" alt="hotel-img">
+                </a>
+                <span class="badge">Bestseller</span>
+                <span class="badge badge-ribbon">30% off</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">
+                  <a href="http://blisspointinns.com/demo/31993.html">Bliss Point Inn Hotel New Buffalo</a>
+                </h3>
+                <p class="card-meta">11539 Obrien Ct, New Buffalo, MI 49117-9277</p>
+                <div class="card-price d-flex align-items-center justify-content-between">
+                  <a href="http://blisspointinns.com/demo/31993.html" class="btn-text">See details <i class="la la-angle-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div></div><div class="owl-item cloned" style="width: 370px; margin-right: 30px;"><div class="card-item"><div class="card-img"><a href="#" class="d-block">
+              <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/FairBridgeinn.jpg" alt="hotel-img"></a>
+
+              <span class="badge">Coming Soon...</span>
+            
+            </div>
+              <div class="card-body"><h3 class="card-title"><a href="#">Fair Bridge Inn &amp; Suites Marion</a></h3>
+                <p class="card-meta">6138 Corridor Dr  Marion, IN 46953, USA</p>
+                <div class="card-price d-flex align-items-center justify-content-between">
+                  <a href="#" class="btn-text">See details<i class="la la-angle-right"></i></a></div></div></div></div><div class="owl-item cloned" style="width: 370px; margin-right: 30px;"><div class="card-item"><div class="card-img"><a href="#" class="d-block">
+              <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/FairBridge.jpg" alt="hotel-img"></a>
+              <span class="badge">Coming Soon...</span>
+            
+            </div><div class="card-body">
+              <h3 class="card-title">
+              <a href="#">FairBridge Inn Express, Indianapolis Northwest</a></h3><p class="card-meta">9251 Wesleyan Rd,
+                  Indianapolis Northwest, Indiana 46268</p>
+                  <div class="card-price d-flex align-items-center justify-content-between"><a href="#" class="btn-text">See details<i class="la la-angle-right"></i></a></div></div></div></div><div class="owl-item active" style="width: 370px; margin-right: 30px;"><div class="card-item">
+              <div class="card-img">
+                <a href="http://blisspointinns.com/demo/31993.html" class="d-block">
+                  <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/sure.jpg" alt="hotel-img">
+                </a>
+                <span class="badge">Bestseller</span>
+                <span class="badge badge-ribbon">30% off</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">
+                  <a href="http://blisspointinns.com/demo/31993.html">Bliss Point Inn Hotel New Buffalo</a>
+                </h3>
+                <p class="card-meta">11539 Obrien Ct, New Buffalo, MI 49117-9277</p>
+                <div class="card-price d-flex align-items-center justify-content-between">
+                  <a href="http://blisspointinns.com/demo/31993.html" class="btn-text">See details <i class="la la-angle-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div></div><div class="owl-item active" style="width: 370px; margin-right: 30px;"><div class="card-item"><div class="card-img"><a href="#" class="d-block">
+              <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/FairBridgeinn.jpg" alt="hotel-img"></a>
+
+              <span class="badge">Coming Soon...</span>
+            
+            </div>
+              <div class="card-body"><h3 class="card-title"><a href="#">Fair Bridge Inn &amp; Suites Marion</a></h3>
+                <p class="card-meta">6138 Corridor Dr  Marion, IN 46953, USA</p>
+                <div class="card-price d-flex align-items-center justify-content-between">
+                  <a href="#" class="btn-text">See details<i class="la la-angle-right"></i></a></div></div></div></div><div class="owl-item active" style="width: 370px; margin-right: 30px;"><div class="card-item"><div class="card-img"><a href="#" class="d-block">
+              <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/FairBridge.jpg" alt="hotel-img"></a>
+              <span class="badge">Coming Soon...</span>
+            
+            </div><div class="card-body">
+              <h3 class="card-title">
+              <a href="#">FairBridge Inn Express, Indianapolis Northwest</a></h3><p class="card-meta">9251 Wesleyan Rd,
+                  Indianapolis Northwest, Indiana 46268</p>
+                  <div class="card-price d-flex align-items-center justify-content-between"><a href="#" class="btn-text">See details<i class="la la-angle-right"></i></a></div></div></div></div><div class="owl-item cloned" style="width: 370px; margin-right: 30px;"><div class="card-item">
+              <div class="card-img">
+                <a href="http://blisspointinns.com/demo/31993.html" class="d-block">
+                  <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/sure.jpg" alt="hotel-img">
+                </a>
+                <span class="badge">Bestseller</span>
+                <span class="badge badge-ribbon">30% off</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">
+                  <a href="http://blisspointinns.com/demo/31993.html">Bliss Point Inn Hotel New Buffalo</a>
+                </h3>
+                <p class="card-meta">11539 Obrien Ct, New Buffalo, MI 49117-9277</p>
+                <div class="card-price d-flex align-items-center justify-content-between">
+                  <a href="http://blisspointinns.com/demo/31993.html" class="btn-text">See details <i class="la la-angle-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div></div><div class="owl-item cloned" style="width: 370px; margin-right: 30px;"><div class="card-item"><div class="card-img"><a href="#" class="d-block">
+              <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/FairBridgeinn.jpg" alt="hotel-img"></a>
+
+              <span class="badge">Coming Soon...</span>
+            
+            </div>
+              <div class="card-body"><h3 class="card-title"><a href="#">Fair Bridge Inn &amp; Suites Marion</a></h3>
+                <p class="card-meta">6138 Corridor Dr  Marion, IN 46953, USA</p>
+                <div class="card-price d-flex align-items-center justify-content-between">
+                  <a href="#" class="btn-text">See details<i class="la la-angle-right"></i></a></div></div></div></div><div class="owl-item cloned" style="width: 370px; margin-right: 30px;"><div class="card-item"><div class="card-img"><a href="#" class="d-block">
+              <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/FairBridge.jpg" alt="hotel-img"></a>
+              <span class="badge">Coming Soon...</span>
+            
+            </div><div class="card-body">
+              <h3 class="card-title">
+              <a href="#">FairBridge Inn Express, Indianapolis Northwest</a></h3><p class="card-meta">9251 Wesleyan Rd,
+                  Indianapolis Northwest, Indiana 46268</p>
+                  <div class="card-price d-flex align-items-center justify-content-between"><a href="#" class="btn-text">See details<i class="la la-angle-right"></i></a></div></div></div></div></div></div><div class="owl-nav disabled"><div class="owl-prev"><i class="la la-angle-left"></i></div><div class="owl-next"><i class="la la-angle-right"></i></div></div><div class="owl-dots disabled"><div class="owl-dot active"><span></span></div></div></div>
+          <!-- end hotel-card-carousel -->
+        </div>
+      </div>
+      <!-- end col-lg-12 -->
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container-fluid -->
+</section>
+<!-- end hotel-area -->
+<!-- ================================
+END HOTEL AREA
+================================= -->
+    <!-- ================================
+       START BLOG AREA
+================================= -->
+    <section id="brand" class="blog-area padding-top-30px padding-bottom-50px">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section-heading text-center">
+              <h2 class="sec__title line-height-55"> Our Brand </h2>
+            </div>
+            <!-- end section-heading -->
+          </div>
+          <!-- end col-lg-12 -->
+        </div>
+        <!-- end row -->
+        <div class="row padding-top-50px">
+          <!-- end col-lg-4 -->
+          <div class="col-lg-3 responsive-column">
+            <div class="card-item blog-card">
+              <div class="card-img">
+                <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/inn.png" alt="blog-img">
+              </div>
+              <div class="card-footer d-flex align-items-center justify-content-between">
+                <div class="author-content d-flex align-items-center">
+                  <div class="author-bio">
+                    <p>In the upper economy suites at Bliss Point 
+Suites, you can find a great price. A variety of amenities and 
+facilities are available to travelers in clean and comfortable 
+accommodations.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end card-item -->
+          </div>
+          <!-- end col-lg-4 -->
+          <!-- end col-lg-4 -->
+          <div class="col-lg-3 responsive-column">
+            <div class="card-item blog-card">
+              <div class="card-img">
+                <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/ins.png" alt="blog-img">
+              </div>
+              <div class="card-footer d-flex align-items-center justify-content-between">
+                <div class="author-content d-flex align-items-center">
+                  <div class="author-bio">
+                    <p>Bliss Point Inn &amp; Suites offers mid-economy 
+suites at a low price. Travelers will enjoy clean, comfortable 
+accommodations with the finest amenities and facilities.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end card-item -->
+          </div>
+          <div class="col-lg-3 responsive-column">
+            <div class="card-item blog-card">
+              <div class="card-img">
+                <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/inss.png" alt="blog-img">
+              </div>
+              <div class="card-footer d-flex align-items-center justify-content-between">
+                <div class="author-content d-flex align-items-center">
+                  <div class="author-bio">
+                    <p>In the upper economy suites at Bliss Point 
+Suites, you can find a great price. A variety of amenities and 
+facilities are available to travelers in clean and comfortable 
+accommodations.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end card-item -->
+          </div>
+          <div class="col-lg-3 responsive-column">
+            <div class="card-item blog-card">
+              <div class="card-img">
+                <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/inh.png" alt="blog-img">
+              </div>
+              <div class="card-footer d-flex align-items-center justify-content-between">
+                <div class="author-content d-flex align-items-center">
+                  <div class="author-bio">
+                    <p>Bliss Point Inn &amp; Suites offers mid-economy 
+suites at a low price. Travelers will enjoy clean, comfortable 
+accommodations with the finest amenities and facilities.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end card-item -->
+          </div>
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end blog-area -->
+    <!-- ================================
+   START BLOG AREA
+================================= -->
+    <!-- ================================
+    START INFO AREA
+================================= -->
+    <section class="info-area info-bg info-area2 padding-top-50px padding-bottom-50px">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 responsive-column">
+            <div class="icon-box icon-layout-2 d-flex">
+              <div class="info-icon flex-shrink-0 bg-rgb text-color-2">
+                <i class="las la-radiation"></i>
+              </div>
+              <!-- end info-icon-->
+              <div class="info-content">
+                <h4 class="info__title">Unique Atmosphere</h4>
+                <p class="info__desc">The atmosphere of a place is the general impression that you get of it.</p>
+              </div>
+              <!-- end info-content -->
+            </div>
+            <!-- end icon-box -->
+          </div>
+          <!-- end col-lg-3 -->
+          <div class="col-lg-3 responsive-column">
+            <div class="icon-box icon-layout-2 d-flex">
+              <div class="info-icon flex-shrink-0 bg-rgb-2 text-color-3">
+                <i class="la la-tree"></i>
+              </div>
+              <!-- end info-icon-->
+              <div class="info-content">
+                <h4 class="info__title">Environment</h4>
+                <p class="info__desc">Varius quam quisque id diam vel quam</p>
+              </div>
+              <!-- end info-content -->
+            </div>
+            <!-- end icon-box -->
+          </div>
+          <!-- end col-lg-3 -->
+          <div class="col-lg-3 responsive-column">
+            <div class="icon-box icon-layout-2 d-flex">
+              <div class="info-icon flex-shrink-0 bg-rgb-3 text-color-4">
+                <i class="las la-map-marked-alt"></i>
+              </div>
+              <!-- end info-icon-->
+              <div class="info-content">
+                <h4 class="info__title">Great Location</h4>
+                <p class="info__desc">Create a better smart home with Homey</p>
+              </div>
+              <!-- end info-content -->
+            </div>
+            <!-- end icon-box -->
+          </div>
+          <!-- end col-lg-3 -->
+          <div class="col-lg-3 responsive-column">
+            <div class="icon-box icon-layout-2 d-flex">
+              <div class="info-icon flex-shrink-0 bg-rgb-4 text-color-5">
+                <i class="las la-bed"></i>
+              </div>
+              <!-- end info-icon-->
+              <div class="info-content">
+                <h4 class="info__title">Homey Comfort</h4>
+                <p class="info__desc">Create a better smart home with Homey</p>
+              </div>
+              <!-- end info-content -->
+            </div>
+            <!-- end icon-box -->
+          </div>
+          <!-- end col-lg-3 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end info-area -->
+    <!-- ================================
+    END INFO AREA
+================================= -->
+    <!-- ================================
+    START ABOUT AREA
+================================= -->
+    <section class="about-area section-bg section--padding padding-bottom-80px">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="about-content pr-5">
+              <div class="section-heading">
+                <h4 class="font-size-16 pb-2">Our Story</h4>
+                <h2 class="sec__title">The BlissPoint Promise </h2>
+                <p class="sec__desc pt-4 pb-2"> There is a distinct and 
+individual personality to each hotel featured on blisspointinns.com. To 
+get a good night's sleep! Our affordable rates will let you focus on 
+what matters most, whether it's a family vacation or a business meeting.
+ </p>
+                <p class="sec__desc"> Whether your needs or the reason 
+for your trip, let Blisspointinns help you find the ideal space for 
+movement, rest, recreation, and, most importantly, accommodation. </p>
+              </div>
+              <!-- end section-heading -->
+            </div>
+          </div>
+          <!-- end col-lg-6 -->
+          <div class="col-lg-6">
+            <div class="image-box about-img-box">
+              <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/img5.jpg" alt="about-img" class="img__item img__item-1">
+              <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/tripadvisor.png" alt="about-img" class="img__item img__item-2">
+            </div>
+          </div>
+          <!-- end col-lg-6 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- ================================
+    END ABOUT AREA
+================================= -->
+    <div class="section-block"></div>
+
+
+
+    <!-- ================================
+    START DESTINATION AREA
+================================= -->
+    <section class="destination-area section--padding overflow-hidden  padding-top-50px">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <div class="section-heading">
+              <h2 class="sec__title"> Top Destinations </h2>
+              <p class="sec__desc pt-3"></p>
+            </div>
+            <!-- end section-heading -->
+          </div>
+        </div>
+        <!-- end row -->
+        <div class="row padding-top-30px">
+          <div class="col-lg-4">
+            <div class="card-item destination-card">
+              <div class="card-img">
+                <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/destination-img2.jpg" alt="destination-img">
+                <span class="badge">Michigan state</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">
+                  <a href="#">Michigan state</a>
+                </h3>
+              </div>
+            </div>
+            <!-- end card-item -->
+          </div>
+          <!-- end col-lg-4 -->
+          <div class="col-lg-4">
+            <div class="card-item destination-card">
+              <div class="card-img">
+                <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/destination-img5.jpg" alt="destination-img">
+                <span class="badge">Indiana state</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">
+                  <a href="#">Indiana state</a>
+                </h3>
+              </div>
+            </div>
+            <!-- end card-item -->
+          </div>
+          <!-- end col-lg-4 -->
+          <div class="col-lg-4">
+            <div class="card-item destination-card">
+              <div class="card-img">
+                <img src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/destination-img4.jpg" alt="destination-img">
+                <span class="badge">New Buffalo</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">
+                  <a href="#">New Buffalo</a>
+                </h3>
+              </div>
+            </div>
+            <!-- end card-item -->
+          </div>
+          <!-- end col-lg-4 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end destination-area -->
+    <!-- ================================
+END DESTINATION AREA
+================================= -->
+    <!-- ================================
+    START CTA AREA
+================================= -->
+    <section class="cta-area subscriber-area section-bg-2 padding-top-60px padding-bottom-60px">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <div class="section-heading text-center">
+              <h2 class="sec__title font-size-30 mb-2 text-white"> Hotels For Every Traveler </h2>
+              <p class="sec__desc text-white-50 pb-1"> We pride 
+ourselves on offering unparalleled amenities and services that cater to 
+the discerning taste of our esteemed guests.. The Bliss Point of Hotels 
+understands that every trip is unique. Sometimes you’re solo on the 
+road. Other times you’re traveling with friends and family. </p>
+            </div>
+            <!-- end section-heading -->
+          </div>
+          <!-- end col-lg-7 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end cta-area -->
+    <!-- ================================
+    END CTA AREA
+================================= -->
+    <!-- ================================
+    START FAQ AREA
+================================= -->
+    <section class="faq-area  section--padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section-heading text-center">
+              <h2 class="sec__title">Get In Touch</h2>
+            </div>
+            <!-- end section-heading -->
+          </div>
+          <!-- end col-lg-12 -->
+        </div>
+        <!-- end row -->
+        <div class="row padding-top-20px">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-8">
+            <div class="form-box">
+              <div class="form-content ">
+                <div class="contact-form-action">
+                  <form method="post" class="row">
+                    <div class="col-lg-6 responsive-column">
+                      <div class="input-box">
+                        <label class="label-text">Your Name</label>
+                        <div class="form-group">
+                          <span class="la la-user form-icon"></span>
+                          <input class="form-control" type="text" name="text" placeholder="Your name">
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end col-lg-6 -->
+                    <div class="col-lg-6 responsive-column">
+                      <div class="input-box">
+                        <label class="label-text">Phone Number</label>
+                        <div class="form-group">
+                          <span class="la la-phone form-icon"></span>
+                          <input class="form-control" type="phone" name="phone" placeholder="Phone Number">
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end col-lg-6 -->
+                    <div class="col-lg-6 responsive-column">
+                      <div class="input-box">
+                        <label class="label-text">Your Email</label>
+                        <div class="form-group">
+                          <span class="la la-envelope-o form-icon"></span>
+                          <input class="form-control" type="email" name="email" placeholder="Email address">
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end col-lg-6 -->
+                    <div class="col-lg-6 responsive-column">
+                      <div class="input-box">
+                        <label class="label-text">Hotels</label>
+                        <div class="form-group select-contain w-100">
+                          <div class="dropdown bootstrap-select select-contain-select"><select class="select-contain-select" tabindex="-98">
+                            <option value="" selected="selected">Select a Hotels </option>
+                            <option value="">BlissPoint Inn New Buffalo</option>
+                          </select><button type="button" class="btn dropdown-toggle btn-light bs-placeholder" data-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" title="Select a Hotels"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Select a Hotels</div></div> </div></button><div class="dropdown-menu "><div class="bs-searchbox"><input type="search" class="form-control" autocomplete="off" placeholder="Search" role="combobox" aria-label="Search" aria-controls="bs-select-1" aria-autocomplete="list"></div><div class="inner show" role="listbox" id="bs-select-1" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end col-lg-6 -->
+                    <div class="col-lg-12">
+                      <div class="input-box">
+                        <label class="label-text">Message</label>
+                        <div class="form-group">
+                          <span class="la la-pencil form-icon"></span>
+                          <textarea class="message-control form-control" name="message" placeholder="Write message"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end col-lg-12 -->
+                    <div class="col-lg-12 text-center">
+                      <div class="btn-box">
+                        <button type="button" class="theme-btn">Send Message</button>
+                      </div>
+                    </div>
+                    <!-- end col-lg-12 -->
+                  </form>
+                </div>
+                <!-- end contact-form-action -->
+              </div>
+              <!-- end form-content -->
+            </div>
+            <!-- end form-box -->
+          </div>
+          <!-- end col-lg-8 -->
+          <!-- end col-lg-4 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end faq-area -->
+    <!-- ================================
+END FAQ AREA
+================================= -->
+    <!-- ================================
+       START FOOTER AREA
+================================= -->
+    <section class="footer-area section-bg padding-top-40px padding-bottom-30px">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="term-box footer-item">
+              <ul class="list-items list--items d-flex align-items-center">
+                <li>
+                  <a href="http://blisspointinns.com/demo/hotels.html">Hotels </a>
+                </li>
+                <li>
+                  <a href="http://blisspointinns.com/demo/index.html#brand">Our Brands </a>
+                </li>
+                <li>
+                  <a href="http://blisspointinns.com/demo/franchise.html">Franchise Development </a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-social-box text-left mt-4">
+              <ul class="social-profile">
+                <li>
+                  <a href="#">
+                    <i class="lab la-facebook-f"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="lab la-instagram"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- end col-lg-8 -->
+          <div class="col-lg-6">
+            <div class="">
+              <h4 class="title curve-shape pb-3 margin-bottom-10px" data-text="curvs"> Franchise </h4>
+              <p class="footer__desc pb-3"> Are you Interested in Joining our Franchise To learn More <a href="http://blisspointinns.com/demo/franchise.html">click here</a>
+              </p>
+            </div>
+          </div>
+          <!-- end col-lg-4 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <div class="section-block mt-4 mb-4"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="copy-right  text-center">
+              <p class="copy__desc"> © BlissPoint Inn® 2023 International. 
+              </p>
+            </div>
+            <!-- end copy-right -->
+          </div>
+          <!-- end col-lg-12 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end footer-area -->
+    <!-- ================================
+       START FOOTER AREA
+================================= -->
+    <!-- start back-to-top -->
+    <div id="back-to-top" class="">
+      <i class="la la-angle-up" title="Go top"></i>
+    </div>
+    <!-- end back-to-top -->
+    <!-- end modal-popup -->
+    <!-- Accessibility Code for "blisspointinns.com" -->
+    <script>
+      window.interdeal = {
+        "sitekey": "1753a2d4519a8e7f8618a5acae591c36",
+        "Position": "Left",
+        "Menulang": "EN-GB",
+        "domains": {
+          "js": "https://cdn.equalweb.com/",
+          "acc": "https://access.equalweb.com/"
+        },
+        "btnStyle": {
+          "vPosition": ["80%", null],
+          "scale": ["0.6", "0.6"],
+          "color": {
+            "main": "#0a51f2",
+            "second": ""
+          },
+          "icon": {
+            "type": 7,
+            "shape": "circle",
+            "outline": false
+          }
+        }
+      };
+      (function(doc, head, body) {
+        var coreCall = doc.createElement('script');
+        coreCall.src = interdeal.domains.js + 'core/4.4.1/accessibility.js';
+        coreCall.defer = true;
+        coreCall.integrity = 'sha512-tq2wb4PBHqpUqBTfTG32Sl7oexERId9xGHX2O3yF91IYLII2OwM1gJVBXGbEPaLmfSQrIE+uAOzNOuEUZHHM+g==';
+        coreCall.crossOrigin = 'anonymous';
+        coreCall.setAttribute('data-cfasync', true);
+        body ? body.appendChild(coreCall) : head.appendChild(coreCall);
+      })(document, document.head, document.body);
+    </script><script src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/accessibility.js" defer="defer" integrity="sha512-tq2wb4PBHqpUqBTfTG32Sl7oexERId9xGHX2O3yF91IYLII2OwM1gJVBXGbEPaLmfSQrIE+uAOzNOuEUZHHM+g==" crossorigin="anonymous" data-cfasync="true"></script>
+    <!-- Template JS Files -->
+    <script src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/jquery-3.4.1.min.js"></script>
+    <script src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/jquery-ui.js"></script>
+    <script src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/popper.min.js"></script>
+    <script src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/bootstrap.min.js"></script>
+    <script src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/bootstrap-select.min.js"></script>
+    <script src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/moment.min.js"></script>
+    <script src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/daterangepicker.js"></script>
+    <script src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/owl.carousel.min.js"></script>
+    <script src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/jquery.fancybox.min.js"></script>
+    <script src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/jquery.countTo.min.js"></script>
+    <script src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/animated-headline.js"></script>
+    <script src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/jquery.ripples-min.js"></script>
+    <script src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/quantity-input.js"></script>
+    <script src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/jquery.superslides.min.js"></script>
+    <script src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/superslider-script.js"></script>
+    <script src="BlissPoint%20Inn%C2%AE%20-%20Find%20Hotel%20Rooms%20&amp;%20Reservations_files/main.js"></script>
+  
+<iframe title="IND - Default Props" id="INDdefaultPropIframe" style="display: none;"></iframe><div class="daterangepicker ltr show-calendar opensright"><div class="ranges"></div><div class="drp-calendar left"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-calendar right"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled" type="button">Apply</button> </div></div></body></html>
